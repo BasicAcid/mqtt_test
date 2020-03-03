@@ -4,8 +4,3 @@ var client = mqtt.connect('mqtt://localhost:1883', {username: 'publisher', passw
 client.on('connect', function () {
     client.publish('presence', 'Hello Friend')
 })
-
-client.on('message', function (topic, message) {
-    console.log(message.toString())
-    client.end()
-})

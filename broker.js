@@ -27,7 +27,11 @@ function setup() {
 
 // Accepts the connection if the username and password are valid
 var authenticate = function(client, username, password, callback) {
-    var authorized = (username === 'subscriber' && password.toString() === "s@}_,9'JhGdNV>Z$;{" || username === 'publisher' && password.toString() === "6*c[%FJ/@?H'.&!Dw/");
+    if (username === 'subscriber')
+        var authorized = (username === 'subscriber' && password.toString() === "s@}_,9'JhGdNV>Z$;{");
+    else if (username === 'publisher')
+        var authorized = (username === 'publisher' && password.toString() === "6*c[%FJ/@?H'.&!Dw/");
+
     if (authorized) client.user = username;
     callback(null, authorized);
 }

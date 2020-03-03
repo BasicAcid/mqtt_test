@@ -1,5 +1,5 @@
 var mqtt = require('mqtt')
-var client = mqtt.connect('mqtt://localhost:1883', {username: 'subscriber', password: "s@}_,9'JhGdNV>Z$;{"})
+var client = mqtt.connect('mqtts://localhost:8443', {username: 'subscriber', password: "s@}_,9'JhGdNV>Z$;{"})
 
 client.on('connect', function () {
     client.subscribe('presence')

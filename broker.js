@@ -1,7 +1,15 @@
 var mosca = require('mosca');
 
+var SECURE_KEY = '/home/david/Sources/minica/localhost/key.pem';
+var SECURE_CERT = '/home/david/Sources/minica/localhost/cert.pem';
+
 var settings = {
-    port: 1883
+    port: 1883,
+    secure : {
+        port: 8443,
+        keyPath: SECURE_KEY,
+        certPath: SECURE_CERT,
+    }
 };
 
 var server = new mosca.Server(settings);
